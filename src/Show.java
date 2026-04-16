@@ -33,17 +33,20 @@ public class Show {
     public void replaceActor(Actor newActor, String oldSurname) {
         for (int i = 0; i < this.listOfActors.size(); i++){
             Actor actor = this.listOfActors.get(i);
-            if (actor.surname.equals(oldSurname)){
-                this.listOfActors.set(i, newActor);
-                System.out.println("Актер заменен.");
-                return;
+            if (actor.getSurname().equals(oldSurname)){
+                if (actor.getName().equals(newActor.getName()) && actor.getHeight() == newActor.getHeight()
+                    && actor.getGender().equals(newActor.getGender())) {
+                    this.listOfActors.set(i, newActor);
+                    System.out.println("Актер заменен.");
+                    return;
+                }
             }
         }
         System.out.println("Актёр с такой фамилией отсутствует.");
     }
 
     public void printDirector() {
-         director.toString();
+        System.out.println(director);
     }
 
 }

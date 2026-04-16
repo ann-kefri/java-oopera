@@ -29,4 +29,8 @@ public class Actor extends Person {
     public int hashCode() {
         return Objects.hashCode(height);
     }
+
+    public double getHeight() {
+        return height;
+    }
 }
